@@ -1,0 +1,13 @@
+<h1>Todos los restaurantes</h1>
+
+<% @restaurant.each do |restaurant| %>
+  <div class="border border-primary rounded mb-1">
+    <p><%= restaurant.name %></p>
+    <p><%= restaurant.category %></p>
+    <p><%= restaurant.address %></p>
+    <p><%= restaurant.phone_number %></p>
+    <p><%= link_to 'Mas informacion', restaurant_path(restaurant), class: "btn btn-primary"%></p>
+  </div>
+<% end %>
+
+<%= link_to 'Añadir nuevo restaurante', new_restaurant_path, class: "btn btn-primary" %>

@@ -1,6 +1,18 @@
 Rails.application.routes.draw do
+  get 'restaurants/index'
+  get 'restaurants/show'
+  get 'restaurants/create'
+  get 'restaurants/new'
+  get 'restaurants/index'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+  # list all restaurants
+  root to: 'restaurants#index' # este es para mostrar la lista de todos los restaurants, es la principal page
+
+  resources :restaurants, only: [:index, :show, :new, :create] do
+    resources :reviews, only: [:create]
+  end
 end
+
+# Defines the root path route ("/")
+# root "articles#index"
