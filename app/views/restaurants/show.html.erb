@@ -19,4 +19,15 @@
         </tbody>
       </table>
 
-  <%= link_to 'Volver a la pagina principal', restaurants_path, class: "btn btn-primary" %>
+<%= link_to 'Deja una Review', new_restaurant_review_path(@restaurant), class: "btn btn-primary" %>
+
+<h2>REVIEWS</h2>
+
+<% @restaurant.reviews.each do |review| %>
+  <p><%= review.content %></p>
+  <strong><%= review.rating %></strong>
+<% end %>
+
+<br>  
+
+<%= link_to 'Volver a la pagina principal', restaurants_path, class: "btn btn-primary" %>

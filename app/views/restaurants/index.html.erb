@@ -1,7 +1,7 @@
 <h1>Todos los restaurantes</h1>
 
-<% @restaurant.each do |restaurant| %>
-  <div class="border border-primary rounded mb-1">
+<% @restaurants.each do |restaurant| %>
+  <div class="border border-primary rounded mb-3 p-3">
     <p><%= restaurant.name %></p>
     <p><%= restaurant.category %></p>
     <p><%= restaurant.address %></p>
